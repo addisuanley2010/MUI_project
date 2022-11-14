@@ -1,13 +1,3 @@
-import React from "react";
-import {
-  Box,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Switch,
-} from "@mui/material";
 import {
   AccountBox,
   Article,
@@ -18,19 +8,20 @@ import {
   Settings,
   Storefront,
 } from "@mui/icons-material";
+import {
+  Box,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Switch,
+} from "@mui/material";
+import React from "react";
 
-const SideBar = () => {
+const Sidebar = ({mode,setMode}) => {
   return (
-    <Box
-      flex={1}
-      p={2}
-      sx={{
-        display: {
-          xs: "none",
-          sm: "block",
-        },
-      }}
-    >
+    <Box flex={1} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
       <Box position="fixed">
         <List>
           <ListItem disablePadding>
@@ -94,7 +85,7 @@ const SideBar = () => {
               <ListItemIcon>
                 <ModeNight />
               </ListItemIcon>
-              <Switch />
+              <Switch onChange={e=>setMode(mode === "light" ? "dark" : "light")}/>
             </ListItemButton>
           </ListItem>
         </List>
@@ -103,4 +94,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default Sidebar;

@@ -1,5 +1,5 @@
 import { Mail, Notifications } from "@mui/icons-material";
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
   Avatar,
@@ -43,10 +43,12 @@ const UserBox = styled(Box)(({ theme }) => ({
     display: "none",
   },
 }));
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  // const [abebe,setAbebe]=useState(0)
   return (
-    <AppBar position="sticky" sx={{ marginBottom: "2px" }}>
+    <AppBar position="sticky">
       <StyledToolbar>
         <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
           WELCOME
@@ -64,36 +66,36 @@ const Navbar = () => {
           </Badge>
           <Avatar
             sx={{ width: 30, height: 30 }}
-            src={"http://localhost:3000/AAA.JPG"}
+            src="http://localhost:3000/AAA.JPG"
             onClick={(e) => setOpen(true)}
           />
         </Icons>
         <UserBox onClick={(e) => setOpen(true)}>
           <Avatar
             sx={{ width: 30, height: 30 }}
-            src={"http://localhost:3000/AAA.JPG"}
+            src="http://localhost:3000/AAA.JPG"
           />
           <Typography variant="span">Addisu</Typography>
         </UserBox>
       </StyledToolbar>
-      <Menu
-        id="demo-positioned-menu"
-        aria-labelledby="demo-positioned-button"
-        open={open}
-        onClose={(e) => setOpen(false)}
-        anchorOrigin={{
-          vertical: "top",
-          horizontal: "right",
-        }}
-        transformOrigin={{
-          vertical: "top",
-          horizontal: "right",
-        }}
-      >
-        <MenuItem>Profile</MenuItem>
-        <MenuItem>My account</MenuItem>
-        <MenuItem>Logout</MenuItem>
-      </Menu>
+        <Menu
+          id="demo-positioned-menu"
+          aria-labelledby="demo-positioned-button"
+          open={open}
+          onClose={(e) => setOpen(false)}
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+        >
+          <MenuItem>Profile</MenuItem>
+          <MenuItem>My account</MenuItem>
+          <MenuItem>Logout</MenuItem>
+        </Menu>
     </AppBar>
   );
 };
