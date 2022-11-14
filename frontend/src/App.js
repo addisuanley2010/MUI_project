@@ -1,9 +1,23 @@
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import Feed from "./components/Feed";
+import RightBar from "./components/RightBar";
+import NavBar from "./components/NavBar";
+import SideBar from "./components/SideBar";
+
+import { Stack } from '@mui/material'
+import { Box } from "@mui/system";
+
 function App() {
   return (
-    <div className="App">
-     hello<AccessTimeIcon/> Alarm
-    </div>
+    <Box>
+      <NavBar />
+
+      <Stack direction={'row'} spacing={2} justifyContent='space-between'>
+        <SideBar />
+        <Feed />
+        <RightBar />
+      </Stack>
+    </Box>
+
   );
 }
 
